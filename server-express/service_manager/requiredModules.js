@@ -8,6 +8,7 @@ const _cors = require('cors');
 const _errorHandler = require('../errorHandler');
 const _router = _express.Router();
 const _deepPopulate = require('mongoose-deep-populate')(_mongoose);
+const _bcrypt = require('bcryptjs');
 
 
 module.exports =  {
@@ -19,5 +20,6 @@ module.exports =  {
     cors : _cors,
     errorHandler : _errorHandler,
     router : _router,
-    deepPopulate : _deepPopulate
+    deepPopulate : _deepPopulate,
+    bcrypt : _bcrypt
 }
