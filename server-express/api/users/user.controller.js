@@ -1,7 +1,7 @@
 'use strict'
 const UserService = require('./user.service');
 const ServiceManager = require('../../service_manager/requiredModules');
-
+const ErrorService = ServiceManager.errorHandler;
 // create user in database
 exports.createUser = ( req, res ) => {
     let query = {};
@@ -15,6 +15,6 @@ exports.createUser = ( req, res ) => {
         res.status(200).json(user);
     })
     .catch(function( err ){
-        ServiceManager.errorHandler.serverError500( res, err );
+        ErrorService.serverError500( res, err );
     })
 }
